@@ -1,0 +1,40 @@
+\subsection{Maxwell's equations}
+
+Electromagnetic waves are a manifestation of oscillations of the space- and time-dependent electromagnetic fields $\E$, $\B$, $\D$ and $\Hf$. We denote the fields by their usual names:
+\begin{itemize}
+\item[] $\E$ is the electric field.
+\item[] $\B$ is the magnetic field.
+\item[] $\D$ is the electric displacement.
+\item[] $\Hf$ is the auxiliary field (often just called "H").
+\end{itemize} 
+\\
+The behavior of these fields in matter is governed by the Maxwell equations \cite{Griffiths}: 
+
+\begin{align}
+\nabla \cdot \D &= \rho_f \\
+\nabla \times \E &= -\dfrac{\partial \B}{\partial t} \\
+\nabla \cdot \B & = 0 \\
+\nabla \times \Hf &= \V{J}_f + \dfrac{\partial \D}{\partial t}
+\end{align}
+
+Here $\rho_f$ and $\V{J}_f$ denote the free densities of charge and current, respectively, and $t$ is the time variable. In our case, concerning light propagation through silicon structures, a number of simplifications can be made:
+First, we can use the following relations for linear, isotropic and non-dispersive materials \cite{LirongYang}:
+
+\begin{align}
+\D &= \epsilon \E \\
+\B &= \mu\Hf 
+\end{align}
+
+Furthermore, No free charge nor current is present in our structures and hence $\rho_f = 0$ and $\V{J}_f = \V{0}$. Using this information we obtain the following equations \cite{LarsPhD}:
+
+
+\begin{align}
+\nabla \times \E &= -\mu \dfrac{\partial \Hf}{\partial t} \label{Mxeq1}\\
+\nabla \times \Hf &= \epsilon \dfrac{\partial \E}{\partial t} \label{Mxeq2}
+\end{align}
+
+Thus the problem of determining how light propagates through our structures comes down to determining the fields $\E$ and $\Hf$ by solving the above differential equations.
+
+\subsection{The FDTD method}
+
+The Finite-Difference Time-Domain (FDTD) method is an algorithm for solving the Maxwell equations numerically. The method consists of discretising $\E$ and $\Hf$ into a lattice, setting some initial values and boundary conditions, and then solving a discretised variant of the equations \eqref{Mxeq1} and \eqref{Mxeq2}  one time-step at a time. More information on the method can be found in references \onlinecite{LirongYang,LarsPhD}.

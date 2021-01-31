@@ -1,0 +1,54 @@
+\subsection{Analysis and discussion}
+This section concerns the plots in Fig. \ref{fig:transmissionkilde2conc} and \ref{fig:transmissionkilde3}. Also, peak insertion losses and graph intercepts are summarised in Table  \ref{table:supercontinuumBox} and Table  \ref{table:supercontinuumYjunction}.
+
+\begin{table}[h]
+\centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{Structure}      & \textbf{Box 40 nm} & \textbf{Box 60 nm} & \textbf{Box 80 nm} \\ \hline
+    Peak insertion loss & $-$5 dB      & $-$5 dB      & $-$10 dB      \\
+    (upper output) & ~         & ~         & ~         \\ \hline
+    Peak insertion loss & $-$0 dB   & $-$5 dB      & $-$5 dB     \\
+    (lower output) & ~         & ~         & ~         \\ \hline
+    Peak crosstalk & $-$ 10 dB         & $-$ 8 dB       & $-$12 dB          \\  
+    at wavelength      & 1350 nm   & 1380 nm   & 1320 nm     \\ \hline
+    Crosstalk       & $-$15 dB  & [$-$16, $-$18] dB        & $-$12 dB          \\  
+    at 1300 nm      & ~         & ~         & ~          \\  \hline
+    Crosstalk       & [$-$15, $-$20] dB         & $-$17 dB         & $-$10 dB          \\  
+    at 1550 nm      & ~         & ~         & ~          \\  \hline
+    \end{tabular}
+    \caption{Characteristics for box structures, read from the graphs for the supercontinuum light source in Fig. \ref{fig:transmissionkilde3}. Peak crosstalk is the intercept between the transmission graphs.}
+    \label{table:supercontinuumBox}
+\end{table}
+
+\begin{table}[h]
+\centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{Structure}      & \textbf{Y-junction 40 nm} & \textbf{Y-junction 60 nm} & \textbf{Y-junction 80 nm} \\ \hline
+    Peak insertion loss & $-$5 dB      & [$-$10, $-$5] dB       & [$-$15, $-$10] dB      \\
+    (upper output) & ~          & ~                 & ~                 \\ \hline
+    Peak insertion loss & $-$3 dB      & [$-$5, $-$2] dB        &  $-$5 dB            \\
+    (lower output) & ~          & ~                 & ~ \\ \hline
+    Peak crosstalk & $-$7 dB         & $-$7 dB         & -          \\  
+    at wavelength  & 1320 nm   & 1320 nm   & -     \\ \hline
+    Crosstalk      & $-$12 dB         & $-$12 dB         & $-$8 dB   \\
+    at 1300 nm     & ~         & ~         & ~           \\  \hline
+    Crosstalk      & $-$17 dB         & $-$12 dB         & $-$12 dB  \\  
+    at 1550 nm & ~         & ~         & ~          \\  \hline
+    \end{tabular}
+    \caption{Characteristics for Y-junction structures, read from the graphs for the supercontinuum light source in Fig. \ref{fig:transmissionkilde3}. Peak crosstalk is the intercept between the transmission graphs. The Y-junction with feature size 80 nm has no intercept; It just lowers all signal strengths. The lower output has a higher insertion loss, but since the device does not separate the signal, the device is meaningless.}
+    \label{table:supercontinuumYjunction}
+\end{table}
+
+Across all designs, the performances are somewhat degraded, and sometimes differ greatly from the simulations. \\
+\\
+Among the six final designs, the box structure w. minimum feature size of 40 nm has the best performance. The high wavelengths are handled well: The peak insertion loss in the lower waveguide is rather suspiciously $-$0 dB, although read as $-$2 dB with the multimedia light source (see Fig. \ref{fig:transmissionkilde2conc}). This is comparable to the simulation results, while the upper waveguide nicely keeps the high-wavelength cross-talk at around $-$15 dB.
+However, low wavelengths cause some trouble: The maximum output in the upper channel is lowered $-$4 dB compared to the simulations, and neither insertion losses nor transmission nor crosstalk values are particularly good.\\
+\\
+The best-performing Y-junction structure (feature size 40 nm) is comparable to the best-performing box structure with feature size 40 nm. Apparently manually altering the initial structure to a Y-junction did not remarkably improve the performance of the device.\\ 
+\\
+The other designs (feature sizes 60 nm and 80 nm) perform significantly worse than predicted by the simulations. In general it seems that larger minimum feature size yields worse performance. This was also the case in the simulations but only by $-$2 dB at most, see Table \ref{simtable}. We attribute this discrepancy to the fact that the designs w. larger minimum feature sizes also have larger shaded regions which were not possible to fabricate, as mentioned earlier. It seems that these shaded regions play an important role in the separation of the light.\\
+\\
+Since the intercept wavelength has been shifted $\approx$ 100 nm to the left for all the designs, it may be interesting to see how they perform for wavelengths below 1250 nm. But data for wavelengths lower than 1250 nm was not recorded in this project.\\
+

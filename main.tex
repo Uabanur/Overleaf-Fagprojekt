@@ -1,0 +1,118 @@
+
+%% For helt almindeligt LaTeX (stabilt): 
+%\documentclass{report}
+
+%For RevTeX (Under construction)
+%% prl optionen giver referencer på en side for sig selv
+%% rmp giver en overskrift til referenceafsnittet, men laver også alle overskriftsfonte om til noget, der ligner nature.
+%% notitlepage rykker indholdsfortegnelsen op lige efter abstractet
+\documentclass[aps,prb,longbibliography,eqsecnum,a4paper,amssymb,groupedaddress]{revtex4-1}
+
+%Magi kode for at få tocdepth til at virke! nix pille. 
+\makeatletter
+% Original \l@section:
+%\renewcommand*\l@section{\vskip 6pt plus 1pt minus 1pt
+%                         \@dottedtocline{1}{1.5em}{2.3em}}
+% Modified \l@section:
+\renewcommand*\l@section{\ifnum\c@tocdepth>\z@\vskip 6pt plus 1pt minus 1pt \fi
+                         \@dottedtocline{1}{1.5em}{2.3em}}
+\makeatother
+
+%tocdepth=0 betyder at alle afsnit i klassen under "chapters" ude bliver table of contents (indebærende "sections", "subsections" osv..) 
+\setcounter{tocdepth}{0}
+
+
+\usepackage[usenames, dvipsnames]{color}
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{float}
+%\usepackage{natbib}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{siunitx}
+%\usepackage[backend=biber]{biblatex}
+%\addbibresource{bibliography.bib}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={140mm,227mm},
+ left=35mm,
+ top=35mm,
+ }
+
+%%%%%%%%%%     Egne kommandoer    %%%%%%%%%%%%%
+% Vektor
+\newcommand{\V}[1]{\mathbf{#1}}
+
+% Ofte brugte felter
+\newcommand{\E}{\V{E}}
+\newcommand{\B}{\V{B}}
+\newcommand{\D}{\V{D}}
+\newcommand{\Hf}{\V{H}}
+
+\newcommand{\Red}[1]{\colorbox{Red}{#1}}
+
+%udkommentere store ting
+\newcommand{\comment}{}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\input{tex/Title.tex}
+\section*{Abstract}
+\input{tex/abstract.tex}
+\section*{Acknowledgements}
+\input{tex/Acknowledgements.tex}
+
+%tocdepth=1 indstiller toc til normal herefter. 
+\addtocontents{toc}{\setcounter{tocdepth}{1}}
+\newpage
+\tableofcontents
+\newpage
+\section{Introduction}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\input{tex/Introduktion.tex}
+
+
+\section{Theory}
+\input{tex/teori.tex}
+\input{tex/InverseVSConventional.tex}
+
+\section{The design process}
+\input{tex/Design.tex}
+
+\section{Structures}
+\input{tex/Structures.tex}
+
+\section{Simulation results}
+\input{tex/SimulationResultsHom.tex}
+\input{tex/SimulationResults.tex}
+
+\section{Experimental setup}
+\input{tex/ExpSetUp.tex}
+
+\section{Experimental results}
+\input{tex/ExperimentalResults.tex}
+\input{tex/ExperimentalResultsKilde2.tex}
+\input{tex/ExperimentalResultsKilde3.tex}
+\input{tex/Expdiscussion.tex}
+
+\section{Statistical analysis}
+\input{tex/Statistics.tex}
+\section{Conclusion}
+\input{tex/Conclusion.tex}
+
+
+%\bibliographystyle{apsrev}
+\newpage
+\bibliography{bibliography.bib}
+
+\newpage
+\input{tex/AppendixRefPlots.tex}
+
+\end{document}

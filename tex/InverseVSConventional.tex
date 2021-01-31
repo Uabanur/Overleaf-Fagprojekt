@@ -1,0 +1,11 @@
+\subsection{Inverse design vs conventional design}
+
+With a conventional design strategy, you first discover (usually in a scientific manner) a property of nature, and then apply this property to produce technology and/or solve a problem. An example of this process is when engineer Percy Spencer in 1945 noticed that microwaves from a radar had melted a chocolate bar in his pocket. This discovery led Spencer to develop the microwave oven \cite{wikiMicrowave}.
+With an inverse design strategy, you do the opposite: You set a goal for a final design, a component with a specific set of physical properties, and approach this design by following a set of design principles. Such principles will typically involve a combination of intelligent use of scientific theory, as well as a degree of trial and error. The latter is often called the Edisonian approach. If you greatly systematise the design principles, the inverse strategy can be expressed as an algorithm to a computer. This is the great advantage of inverse design; it can be used to automate and efficiently design products and components to fit consumer needs, and lower the number of constraints set by the designer.
+
+\subsection{Topology optimisation}
+
+Topology optimisation is an inverse design method where an algorithm performs calculations on a mesh region that is initially very simple - in our project, a square box or Y-junction. \texttt{mesh} refers to the discretised lattice of data points representing the silicon structure and its immediate surroundings.
+The algorithm then optimises the structure by redistributing material in a \texttt{design domain}, within the \texttt{mesh}. The structure is manipulated to accomplish the goal described in the objective function, while Maxwell's equations are obeyed in every step. Notice that while the algorithm is only allowed to redistribute material in the \texttt{design domain}, Maxwell's equations are obeyed in the larger region, the \texttt{mesh}.
+
+DTU Photonics and DTU Mechanics have developed a topology optimisation software package called PhaZor, which we used to design the demultiplexers described in this paper. Details about using PhaZor are described in the design section. For details about the algorithms, see ref. \onlinecite{PhaZor}.
